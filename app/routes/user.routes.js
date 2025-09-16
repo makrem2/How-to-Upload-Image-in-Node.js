@@ -22,7 +22,7 @@ module.exports = function(app){
 
   router.post("/createuser",usercontroller.upload,usercontroller.createuser);
 
-
+  router.get("/GetAllUsers",usercontroller.GetAllUsers)
 
 
 

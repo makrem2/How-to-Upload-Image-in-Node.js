@@ -24,6 +24,19 @@ exports.createuser = async (req, res) => {
   }
 };
 
+exports.GetAllUsers = async (req,res)=>{
+  try {
+
+    const user = await User.findAll();
+
+
+    return res.status(200).send({user});
+    
+  } catch (error) {
+    return res.status(500).send({ message: error.message });
+  }
+}
+
 storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, "Images");
